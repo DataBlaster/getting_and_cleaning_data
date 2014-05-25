@@ -150,7 +150,12 @@ for (i in 1:length(mean_std_analysis[,1])) {
 	
 	agg_data = agg_data[order(agg_data$subjectid,agg_data$activityid),]
 
-## 8. Return data frame 
+
+## 8. Write out tidy data set to working directory
+
+	write.table(agg_data, "subject_activity_mean_tiday_data.txt", sep="\t",row.names=FALSE)
+
+## 9. Return data frame 
 
 	return(agg_data)
 

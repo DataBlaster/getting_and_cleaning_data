@@ -1,2 +1,3 @@
-coursera_jh_getting_and_cleaning_data
+Coursera John Hopkins Data Science Track: Getting and Cleaning Data Project
+
 =====================================
