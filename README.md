@@ -48,13 +48,13 @@ The following files are available for the train and test data. Their description
 * 'train/Inertial Signals/body_acc_x_train.txt': The body acceleration signal obtained by subtracting the gravity from the total acceleration. 
 * 'train/Inertial Signals/body_gyro_x_train.txt': The angular velocity vector measured by the gyroscope for each window sample. The units are radians/second. 
 
-4. Figure out data frame naming convention
+ 4. Figure out data frame naming convention
 
-5. Write R code to process files, transform data, run analysis, and create needed tidy dataset.
+ 5. Write R code to process files, transform data, run analysis, and create needed tidy dataset.
 
-6. Validate R code and resulting tidy data set deliverable
+ 6. Validate R code and resulting tidy data set deliverable
 
-7. Push to Git Hub and submit project on Coursera website.
+ 7. Push to Git Hub and submit project on Coursera website.
 
 
 ### R Code Specs
@@ -73,11 +73,12 @@ You should create one R script called run_analysis.R that does the following.
 5. Creates a second, independent tidy data set with the average of each variable for each activity and each subject. 
 
 My implementation:
-1. Upload files from working directory to new data frames.
+
+ 1. Upload files from working directory to new data frames.
 
 I generally tried to prefix files with "test_" and "train_" so the files would be grouped together based on the set they belonged to.  This was helpful for me down the road when trying to understand the file contents.  I just used the file names appended to their groups to finish the file naming.
 
-2. Set column names
+ 2. Set column names
 
 The data files themselves do not have headers so we have to use supporting files to understand what the column headers should be.  Refer to README.txt, features.txt, and features_info.txt.
 
@@ -91,18 +92,18 @@ My column name mappings:
 
 The paste function came in real handy to generate sequential labels for the reading files.
 
-3. Merge training and test sets to create one data set
+ 3. Merge training and test sets to create one data set
 
 For this, I created a new variable to track which set the subject came from ("test" or "train") as subjecttype.
 
 * Create separate merged datasets for test and training with the following structure: subjectid, subjecttype, activity, features, and readings from body_acc_x, body_acc_y, body_acc_z, body_gyro_x,body_gyro_y,body_gyro_z,total_acc_x,total_acc_y,total_acc_z
 * Create a complete data set using rbind() function to merge test and training sets.
 
-4. Extracts only the measurements on the mean and standard deviation for each measurement. 
+ 4. Extracts only the measurements on the mean and standard deviation for each measurement. 
 
 Using grep function to look for column names with "mean()" or "std()", I created a new data set called mean_std_analysis that included subjectid, subjecttype, and activity.
 
-5. Uses descriptive activity names to name the activities in the data set
+ 5. Uses descriptive activity names to name the activities in the data set
 
 For this part, you will need to leverage the activity_labels.txt file that has a mapping of the activity labels integer values to their description.
 
@@ -117,7 +118,7 @@ Here's the mapping:
 
 I used a for loop to set a new variable called activitydesc using the mapping above.  I'm sure there is a better way to do this that will yield better performance.
 
-6.  Appropriately labels the data set with descriptive activity names. 
+ 6.  Appropriately labels the data set with descriptive activity names. 
 
 This part is a bit subjective since this is implementing a style guide.  I used Week 4's first lecture as a guide.
 
@@ -134,13 +135,13 @@ This is important since the features.txt has many parenthesis.
 
 I wanted to move the new variable activitydesc next to activityid.
 
-7. Creates a second, independent tidy data set with the average of each variable for each activity and each subject. 
+ 7. Creates a second, independent tidy data set with the average of each variable for each activity and each subject. 
 
 For this, I used the aggregate() function using subjectid and activitydesc as my groups while using mean as the function.
 
-8. Write out tidy data set to working directory
+ 8. Write out tidy data set to working directory
 
 I created a tab delimited file to the working directory.  It's important to set row.names=FALSE so you don't get the row.names column in the first column of the text file.
 
-9. Return data frame 
+ 9. Return data frame 
 
