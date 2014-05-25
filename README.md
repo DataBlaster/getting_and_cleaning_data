@@ -28,7 +28,9 @@ This is a guide for the Coursera John Hopkins Data Science Track Course Getting 
 ### Steps
 
 -1. Download raw data from from the University of California, Irvine [website](http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones)
+
 -2. Extract zip file to working directory
+
 -3. Read README.txt to get an overview of the file and folder structure.  This is absolutely critical as there are many files and they are broken out in two groups: test and train sets.
 
 (from the README.txt file.  I would suggest following this order in examining the files.)
