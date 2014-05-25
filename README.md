@@ -135,13 +135,13 @@ This is important since the features.txt has many parenthesis.
 
 I wanted to move the new variable activitydesc next to activityid.
 
- 7. Creates a second, independent tidy data set with the average of each variable for each activity and each subject. 
+-7. Creates a second, independent tidy data set with the average of each variable for each activity and each subject. 
 
 For this, I used the aggregate() function using subjectid and activitydesc as my groups while using mean as the function.
 
- 8. Write out tidy data set to working directory
+-8. Write out tidy data set to working directory
 
 I created a tab delimited file to the working directory.  It's important to set row.names=FALSE so you don't get the row.names column in the first column of the text file.
 
- 9. Return data frame 
+-9. Return data frame 
 
